@@ -14,17 +14,21 @@ galleryRef.addEventListener("click", onGalleryItemClick);
 function createGalleryMarkup(galleryItems) {
   return galleryItems
     .map(({ preview, original, description }) => {
-      return `
-        <div class="gallery__item">
-          <a class="gallery__link" data-href="${original}" target="_blank">
-            <img
-              class="gallery__image"
-              src="${preview}"
-              data-source="${original}"
-              alt="${description}"
-            />
-          </a>
-        </div>`;
+      return `<a class="gallery__item" href="large-image.jpg">
+  <img class="gallery__image" src="small-image.jpg" alt="Image description" />
+</a>`;
+
+      //   return `
+      //     <div class="gallery__item">
+      //       <a class="gallery__link" data-href="${original}" target="_blank">
+      //         <img
+      //           class="gallery__image"
+      //           src="${preview}"
+      //           data-source="${original}"
+      //           alt="${description}"
+      //         />
+      //       </a>
+      //     </div>`;
     })
     .join("");
 }
