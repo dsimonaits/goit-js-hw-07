@@ -9,22 +9,22 @@ Do this task in the 01-gallery.html and 01-gallery.js files. Break it down into 
 2. Implementing delegation to div.gallery and getting the url of a large image.
 3. Adding the script and styles of the modal window library basicLightbox. Use the jsdelivrCDN service and add links to minified (.min) library files to your project.
 4. Opening a modal window by clicking on a gallery item. To do this, check out the documentation and examples.
-5. Replacing the value of the src attribute of the <img> element in a modal window before opening. Use the ready-made modal window markup with the image from the examples of the basicLightbox library.
+5. Replacing the value of the src attribute of the &#60;img> element in a modal window before opening. Use the ready-made modal window markup with the image from the examples of the basicLightbox library.
    <br>
    Gallery item markup
-   The link to the original image must be stored in the source data attribute on the <img> element and specified in the link's href. Do not add any HTML tags or CSS classes other than those in this template.
+   The link to the original image must be stored in the source data attribute on the &#60;img> element and specified in the link's href. Do not add any HTML tags or CSS classes other than those in this template.
    <br>
-   &#60;div class="gallery**item">
-   &#60;a class="gallery**link" href="large-image.jpg">
-   <img
-         class="gallery__image"
-         src="small-image.jpg"
-         data-source="large-image.jpg"
-         alt="Image description"
-       />
-   </a>
-   &#60;/div>
-   <br>
+   <br>&#60;div class="gallery**item">
+   <br>&#60;a class="gallery**link" href="large-image.jpg">
+   <br><img
+   <br> class="gallery\_\_image"
+   <br> src="small-image.jpg"
+   <br> data-source="large-image.jpg"
+   <br> alt="Image description"
+   />
+   <br></a>
+   <br>&#60;/div>
+   <br><br>
    Please note that the image is wrapped in a link, which means that, when clicked, the user will be redirected to another page by default. Disable this behavior by default.
 
 Closing from keyboard
@@ -38,9 +38,9 @@ Create the same gallery as in the first task, but using the SimpleLightbox libra
 
 It is necessary to slightly change the gallery card markup; use this template.
 <br>
-&#60;a class="gallery**item" href="large-image.jpg">
-&#60;img class="gallery**image" src="small-image.jpg" alt="Image description" />
-&#60;/a>
+<br>&#60;a class="gallery**item" href="large-image.jpg">
+<br>&#60;img class="gallery**image" src="small-image.jpg" alt="Image description" />
+<br>&#60;/a>
 <br>
 Do this task in the 02-lightbox.html and 02-lightbox.js files. Break it down into several subtasks:
 
