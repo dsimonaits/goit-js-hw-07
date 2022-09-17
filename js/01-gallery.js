@@ -14,7 +14,7 @@ function createGalleryMarkup(galleryItems) {
     .map(({ preview, original, description }) => {
       return `
         <div class="gallery__item">
-          <a class="gallery__link" data-href="${original}" target="_blank">
+          <a class="gallery__link" data-href="${original}">
             <img
               class="gallery__image"
               src="${preview}"
@@ -35,10 +35,10 @@ function onGalleryItemClick(e) {
 
   const itemSource = e.target.dataset.source;
 
-  createLigthBoxItem(itemSource);
+  createBasicLigthBoxItem(itemSource);
 }
 
-function createLigthBoxItem(itemSource) {
+function createBasicLigthBoxItem(itemSource) {
   basicLightbox
     .create(
       `
