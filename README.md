@@ -21,8 +21,7 @@ Do this task in the 01-gallery.html and 01-gallery.js files. Break it down into 
    <br> src="small-image.jpg"
    <br> data-source="large-image.jpg"
    <br> alt="Image description"
-   />
-   <br></a>
+   />&#60;/a>
    <br>&#60;/div>
    <br><br>
    Please note that the image is wrapped in a link, which means that, when clicked, the user will be redirected to another page by default. Disable this behavior by default.
