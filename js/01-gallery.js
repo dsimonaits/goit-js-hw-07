@@ -7,8 +7,6 @@ const createGalleryItem = createGalleryMarkup(galleryItems);
 
 galleryRef.insertAdjacentHTML("afterbegin", createGalleryItem);
 
-galleryRef.addEventListener("click", onGalleryItemClick);
-
 function createGalleryMarkup(galleryItems) {
   return galleryItems
     .map(({ preview, original, description }) => {
@@ -27,39 +25,27 @@ function createGalleryMarkup(galleryItems) {
     .join("");
 }
 
-function onGalleryItemClick(e) {
-  const galleryItem = e.target.classList.contains("gallery__image");
-  if (!galleryItem) {
-    return;
-  }
-
-  const itemSource = e.target.dataset.source;
-
-  createBasicLigthBoxItem(itemSource);
-}
-
-function createBasicLigthBoxItem(itemSource) {
-  basicLightbox
-    .create(
-      `
-		<img width="1400" height="900" src="${itemSource}">
+galleryRef.onclick = (e) => {
+  const galleryItemSource = e.target.dataset.source;
+  const newLightbox = basicLightbox.create(
+    `
+		<img width="1400" height="900" src="${galleryItemSource}">
 	`,
-      {
-        onShow: () => {
-          window.addEventListener("keydown", onEscKeyPress);
-        },
+    {
+      onShow: () => {
+        window.addEventListener("keydown", onEscKeyPress);
+      },
 
-        onClose: () => {
-          window.removeEventListener("keydown", onEscKeyPress);
-        },
-      }
-    )
-    .show();
-}
+      onClose: () => {
+        window.removeEventListener("keydown", onEscKeyPress);
+      },
+    }
+  );
+  newLightbox.show();
 
-function onEscKeyPress(e) {
-  if (e.code === "Escape") {
-    e.target.lastChild.remove();
-    window.removeEventListener("keydown", onEscKeyPress);
+  function onEscKeyPress(e) {
+    if (e.code === "Escape") {
+      newLightbox.close();
+    }
   }
-}
+};
